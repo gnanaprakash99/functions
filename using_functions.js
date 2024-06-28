@@ -15,18 +15,18 @@ greetings("ram", false)
 
 
 
-function result(tiffen, lunch, dinner) { //inside the bracket called parameters
+function sumExpense(tiffen, lunch, dinner) { //inside the bracket called parameters
     let sum = tiffen + lunch + dinner
     console.log("total expense:" + sum)
 }
-result(25, 50, 25) //inside the bracket called arguments
+sumExpense(25, 50, 25) //inside the bracket called arguments
 
 
-function res(tiffen, lunch, dinner) {//inside the bracket called parameters
+function sumExpense1(tiffen, lunch, dinner) {//inside the bracket called parameters
 
     return tiffen + lunch + dinner
 }
-var add = res(50, 200, 50)//inside the bracket called arguments
+var add = sumExpense1(50, 200, 50)//inside the bracket called arguments
 console.log("total expense: " + add)
 
 
