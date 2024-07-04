@@ -24,6 +24,7 @@ console.log(`Current time is: ${date1.getHours()} ${amPm}:${date1.getMinutes()}:
 }
 // currentDayAndTime()
 
+// Solution 3
 function currentDate(){
     let today=new Date();
     let date2= today.getDay();
