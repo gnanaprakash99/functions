@@ -19,14 +19,18 @@
     <div>
         <h1>Finding Days Left</h1>
         <p>
-        <h2 id="year">year <input type="number"></h2>
+        <h2>year <input id="givenYear" type="number"></h2>
 
         </p>
-        <form>
+        <form onsubmit="event.preventDefault(); remainingDaysOfNewYear();remainingDaysOfChrismas()">
             <table>
                 <tr>
-                    <td>Days left for New Year</td>
-                    <td><input type="number"></td>
+                    <td>Days left for New Year:</td>
+                    <td><input id="daysLeft" type="number"></td>
+                </tr>
+                <tr>
+                    <td>Days left for Chrismas:</td>
+                    <td><input id="chrismas" type="number"></td>
                 </tr>
                 <tr>
                     <td>
@@ -39,7 +43,34 @@
     </div>
 </body>
 <script>
-let year =
+    let today = new Date();
+    let currentYear = today.getFullYear();
+
+    let remainingDaysOfNewYear = () => {
+        let givenYear = document.getElementById("givenYear").value;
+        if (givenYear <= currentYear) return alert("Invalid Year")
+        let newYear = new Date(givenYear, 0, 1);  // currentYear +1=2024+1 ; 0 is january; 1 is date
+
+        let timeDifference = newYear - today;
+        let daysDifference = Math.ceil(timeDifference / (24 * 60 * 60 * 1000));   //24hrs * 60min * 60sec * 1000ms
+        console.log(daysDifference);
+
+        let daysLeft = document.getElementById("daysLeft")
+        daysLeft.value = daysDifference
+    };
+
+    let remainingDaysOfChrismas = () => {
+        let givenYear = document.getElementById("givenYear").value;
+        if (givenYear <= currentYear) return alert("Invalid Year")
+        let chrismasDay = new Date(givenYear-1, 11, 25);  
+
+        let timeDifference = chrismasDay - today;
+        let daysDifference = Math.ceil(timeDifference / (24 * 60 * 60 * 1000));
+        console.log(daysDifference);
+
+        let chrismas = document.getElementById("chrismas");
+        chrismas.value = daysDifference;
+    };
 
 </script>
 
