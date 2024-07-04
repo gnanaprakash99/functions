@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>guessnumber</title>
+</head>
+
+<body>
+    <h1>Guessing the random number</h1>
+    <form onsubmit="event.preventDefault();Guessing()">
+        <label for="guessNumber">guess number</label>
+        <input id="guessNumber" type="number" required>
+        <br>
+        <label for="randomNumber">random number</label>
+        <input id="randomNumber" type="number" readonly>
+        <br>
+        <button onclick="random()" type="button">random</button>
+        <button type="submit">submit</button>
+    </form>
+</body>
+<script>
+    let guessNumber = document.getElementById("guessNumber");
+    let randomNumber = document.getElementById("randomNumber");
+
+
+    function random() {
+        let number = Math.floor(Math.random() * 10);
+        randomNumber.value = number;
+        console.log(number);
+    }
+
+    function Guessing() {
+        if (randomNumber.value === guessNumber.value) {
+            alert("Matched")
+        } else {
+            alert("Not Matched")
+        }
+
+    }
+
+</script>
+
+</html>
