@@ -10,12 +10,12 @@ let message4 = `Hi, i'm Ajay.
 // on message3 and message4 using templte literals
 
 // console.log(message);
-// console.log(message1);
-// console.log(message2);
+console.log(message1);
+console.log(message2);
 // console.log(message3);
 // console.log(message4);
 
 
 let name ="Ajay" 
 let message5 = `Hi, i'm ${name}. I'm a "software engineer" working with my laptop.`
-console.log(message5);
+// console.log(message5);

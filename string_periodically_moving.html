@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="target">hi. i'm prakash and a full stock developer</p>
+    <button onclick="(target)">Click</button>
+</body>
+<script>
+    let target=document.getElementById("target");
+
+    // Code
+    function rotateStringRight(str) {
+  if (str.length === 0) return str;
+  return str[str.length - 1] + str.slice(0, str.length - 1);
+}
+
+function startRotation(str) {
+  let rotatedStr = str;
+  const intervalId = setInterval(() => {
+    rotatedStr = rotateStringRight(rotatedStr);
+    console.log(rotatedStr);
+  }, 1000); // Adjust the interval as needed (1000 ms = 1 second)
+  
+  return intervalId; // Return the interval ID to be able to stop the rotation
+}
+
+function stopRotation(intervalId) {
+  clearInterval(intervalId);
+}
+
+// Example 
+const intervalId = startRotation(target);
+
+// To stop the rotation after 10 seconds:
+setTimeout(() => {
+  stopRotation(intervalId);
+  console.log("Rotation stopped.");
+}, 10000);
+
+</script>
+</html>
+
